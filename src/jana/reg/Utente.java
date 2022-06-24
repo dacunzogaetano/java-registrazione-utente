@@ -26,7 +26,11 @@ public class Utente {
 		    	throw new Exception("email non contiene un punto");
 		    }
 		// aggiungere eccezione alla password
-		
+		if (password.length()<8) {
+			throw new Exception("La password è troppo corta");
+		} else if (password.length()>12) {
+			throw new Exception("La lunghezza è troppo lunga");
+		}
 		
 		//aggiungere eccezione all'eta
 		if (eta < 18) {
@@ -86,7 +90,7 @@ public class Utente {
 	//metodo concatenare parametri utente
 	
 	public String toString() {
-		return "Nome e Cognome: "+ nome + " " + cognome + "\n" + "Email, password ed eta: " + email + " " + password + " " + eta;
+		return "Bravo! \nNome e Cognome: "+ nome + " " + cognome +  "\nEmail: " + email + "\nPassword : " + password + "\nEtà : " + eta;
 		
 
 	}
