@@ -1,5 +1,7 @@
 package jana.reg;
 
+import java.util.Scanner;
+
 public class Registrazione {
 	
 	/* Creare una classe Registrazione con metodo main in cui, tramite Scanner, vengono chieste le informazioni all’utente e si prova a creare un nuovo oggetto Utente.
@@ -7,10 +9,27 @@ public class Registrazione {
 
 	public static void main(String[] args) {
 		
+		Scanner scan = new Scanner(System.in);
+		
 		try {
-			Utente Prova = new Utente("Gaetano", "Dacunzo", "gaet.ano@yahoo", "java", 30);
+			System.out.println("Inserisci il tuo nome");
+			String nome = scan.nextLine();
 			
-			System.out.println(Prova.toString());
+			System.out.println("Inserisci il tuo cognome");
+			String cognome = scan.nextLine();
+			
+			System.out.println("Inserisci la tua email");
+			String email = scan.nextLine();
+			
+			System.out.println("Inserisci la tua password");
+			String password = scan.nextLine();
+			
+			System.out.println("Inserisci la tua età");
+			int eta = Integer.parseInt(scan.nextLine());
+			
+			Utente prova = new Utente(nome, cognome, email, password, eta);
+			
+			System.out.println(prova.toString());
 			
 		} catch (Exception e) {
 			System.out.println("Impossibile creare l'utente");
@@ -19,7 +38,7 @@ public class Registrazione {
 		      
 		}
 
-		
+		 scan.close();
 	}
 
 }
