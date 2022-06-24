@@ -1,4 +1,4 @@
-package java.registrazione.utente;
+package jana.reg;
 
 public class Registrazione {
 	
@@ -7,7 +7,19 @@ public class Registrazione {
 
 	public static void main(String[] args) {
 		
+		try {
+			Utente Prova = new Utente("Gaetano", "Dacunzo", "gaet.ano@yahoo", "java", 30);
+			
+			System.out.println(Prova.toString());
+			
+		} catch (Exception e) {
+			System.out.println("Impossibile creare l'utente");
+		      System.out.println(e.getMessage());
+			
+		      
+		}
 
+		
 	}
 
 }
